@@ -1,0 +1,222 @@
+
+
+class Field:
+    def __init__(self, name, type=None):
+        self.name = name
+        self.type = type
+    def parse(self, raw_value):
+        if self.type is None:
+            return raw_value
+        else:
+            return self.type(raw_value)
+
+fields = [
+    Field('beginning_of_file'),
+    Field('average_windspeed'),
+    Field('current_windspeed'),
+    Field('wind_direction'),
+    Field('outside_temp'),
+    Field('outside_humidity'),
+    Field('barometer'),
+    Field('daily_rain'),
+    Field('monthly_rain'),
+    Field('yearly_rain'),
+    Field('rain_rate_mm/min'),
+    Field('max_rain_rate_mm/min'),
+    Field('indoor_temperature'),
+    Field('indoor_humidity'),
+    Field('soil_tempeperature'),
+    Field('forecast_icon'),
+    Field('wmr968_extra_temperature'),
+    Field('wmr968_extra_humidity'),
+    Field('wmr968_extra_sensor'),
+    Field('yesterday_rain'),
+    Field('extra_temperature_sensor_1', type=float),
+    Field('extra_temperature_sensor_2', type=float),
+    Field('extra_temperature_sensor_3', type=float),
+    Field('extra_temperature_sensor_4', type=float),
+    Field('extra_temperature_sensor_5', type=float),
+    Field('extra_temperature_sensor_6', type=float),
+    Field('extra_humidity_sensor_1'),
+    Field('extra_humidity_sensor_2'),
+    Field('extra_humidity_sensor_3'),
+    Field('hour', type=int),
+    Field('minute', type=int),
+    Field('seconds', type=int),
+    Field('station_name_time'),
+    Field('lightning_counts_since_noon'),
+    Field('solar'),
+    Field('day', type=int),
+    Field('month', type=int),
+    Field('wmr968_batt1'),
+    Field('wmr968_batt2'),
+    Field('wmr968_batt3'),
+    Field('wmr968_batt4'),
+    Field('wmr968_batt5'),
+    Field('wmr968_batt6'),
+    Field('wmr968_batt7'),
+    Field('windchill'),
+    Field('humidex'),
+    Field('max_day_temperature'),
+    Field('min_day_temperature'),
+    Field('current_condition_icon'),
+    Field('weather_desc'),
+    Field('baro_trend_last_hour'),
+    Field('windspeed_hour_01'),
+    Field('windspeed_hour_02'),
+    Field('windspeed_hour_03'),
+    Field('windspeed_hour_04'),
+    Field('windspeed_hour_05'),
+    Field('windspeed_hour_06'),
+    Field('windspeed_hour_07'),
+    Field('windspeed_hour_08'),
+    Field('windspeed_hour_09'),
+    Field('windspeed_hour_10'),
+    Field('windspeed_hour_11'),
+    Field('windspeed_hour_12'),
+    Field('windspeed_hour_13'),
+    Field('windspeed_hour_14'),
+    Field('windspeed_hour_15'),
+    Field('windspeed_hour_16'),
+    Field('windspeed_hour_17'),
+    Field('windspeed_hour_18'),
+    Field('windspeed_hour_19'),
+    Field('windspeed_hour_20'),
+    Field('max_wind_gust'),
+    Field('dewpoint_temperature'),
+    Field('cloud_height'),
+    Field('date'),
+    Field('max_humidityidex'),
+    Field('min_humidityidex'),
+    Field('max_windchill'),
+    Field('min_windchill'),
+    Field('davis_vp_uv_index'),
+    Field('hr_windspeed_01'),
+    Field('hr_windspeed_02'),
+    Field('hr_windspeed_03'),
+    Field('hr_windspeed_04'),
+    Field('hr_windspeed_05'),
+    Field('hr_windspeed_06'),
+    Field('hr_windspeed_07'),
+    Field('hr_windspeed_08'),
+    Field('hr_windspeed_09'),
+    Field('hr_windspeed_10'),
+    Field('hr_temperature_01'),
+    Field('hr_temperature_02'),
+    Field('hr_temperature_03'),
+    Field('hr_temperature_04'),
+    Field('hr_temperature_05'),
+    Field('hr_temperature_06'),
+    Field('hr_temperature_07'),
+    Field('hr_temperature_08'),
+    Field('hr_temperature_09'),
+    Field('hr_temperature_10'),
+    Field('hr_rain_01'),
+    Field('hr_rain_02'),
+    Field('hr_rain_03'),
+    Field('hr_rain_04'),
+    Field('hr_rain_05'),
+    Field('hr_rain_06'),
+    Field('hr_rain_07'),
+    Field('hr_rain_08'),
+    Field('hr_rain_09'),
+    Field('hr_rain_10'),
+    Field('max_heat_index'),
+    Field('min_heat_index'),
+    Field('heat_index'),
+    Field('max_avg_windspeed_today'),
+    Field('lightning_count_last_minute'),
+    Field('time_of_last_lightning_count'),
+    Field('date_of_last_lightning_count'),
+    Field('wind_avg_direction'),
+    Field('nexstorm_distance_last_strike'),
+    Field('nexstorm_bearing_last_strike'),
+    Field('extra_temperature_sensor_7'),
+    Field('extra_temperature_sensor_8'),
+    Field('extra_humidity_sensor_4'),
+    Field('extra_humidity_sensor_5'),
+    Field('extra_humidity_sensor_6'),
+    Field('extra_humidity_sensor_7'),
+    Field('extra_humidity_sensor_8'),
+    Field('vp_solar_wm2'),
+    Field('max_intemp'),
+    Field('min_intemp'),
+    Field('apparent_temperature'),
+    Field('max_baro'),
+    Field('min_baro'),
+    Field('max_gust_last_hour'),
+    Field('max_gust_last_hour_time'),
+    Field('max_gust_today_time'),
+    Field('max_apparent_temperature'),
+    Field('min_apparent_temperature'),
+    Field('max_dew_pt'),
+    Field('min_dew_pt'),
+    Field('max_gust_in_last_min'),
+    Field('year', type=int),
+    Field('thsw_index'),
+    Field('temp_trend'),
+    Field('humidity_trend'),
+    Field('humidex_trend'),
+    Field('hr_wind_dir_01'),
+    Field('hr_wind_dir_02'),
+    Field('hr_wind_dir_03'),
+    Field('hr_wind_dir_04'),
+    Field('hr_wind_dir_05'),
+    Field('hr_wind_dir_06'),
+    Field('hr_wind_dir_07'),
+    Field('hr_wind_dir_08'),
+    Field('hr_wind_dir_09'),
+    Field('hr_wind_dir_10'),
+    Field('vp_leaf_wetness'),
+    Field('vp_soil_moisture'),
+    Field('10_minute_avg_wind_speed'),
+    Field('wet_bulb_temperatureerature'),
+    Field('latitude'),
+    Field('longitude'),
+    Field('9am_reset_rain_total'),
+    Field('daily_high_humidityidity'),
+    Field('daily_low_humidityidity'),
+    Field('midnight_reset_rain_total'),
+    Field('time_of_daily_low_windchill'),
+    Field('current_cost_channel_1'),
+    Field('current_cost_channel_2'),
+    Field('current_cost_channel_3'),
+    Field('current_cost_channel_4'),
+    Field('current_cost_channel_5'),
+    Field('current_cost_channel_6'),
+    Field('daily_wind_run'),
+    Field('time_of_daily_max_temperature')
+    ]
+
+
+import requests
+import datetime
+
+
+def parse_client_raw(text):
+    result = {}
+    parts = text.split(' ')
+    for field, raw_value in zip(fields, parts):
+        result[field.name] = field.parse(raw_value)
+    return result
+
+def get_time(parsed_result):
+    return datetime.datetime(
+        year=parsed_result['year'],
+        month=parsed_result['month'],
+        day=parsed_result['day'],
+        hour=parsed_result['hour'],
+        minute=parsed_result['minute'],
+        second=parsed_result['seconds'])
+
+
+
+r = requests.get("http://wetter.retti.ch/clientraw.txt")
+result = parse_client_raw(r.text)
+update_time = get_time(result)
+print(f'''Pfäffikersee
+------------
+Wassertemperatur: {result['extra_temperature_sensor_2']}
+Stand {update_time}
+''')
+
